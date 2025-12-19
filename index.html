@@ -1,11 +1,304 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <meta charset="UTF-8">
-  <title>Index</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <body>
-    <div class="setup">
-     <h1>This is a Website!</h1>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Rocket Team | Northern Kentucky University</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#d25633",
+            "background-light": "#f5f5f5",
+            "background-dark": "#121212",
+            "surface-dark": "#1e1e1e",
+            "text-light": "#333333",
+            "text-dark": "#e0e0e0",
+          },
+          fontFamily: {
+            display: ["Oswald", "sans-serif"],
+            body: ["Roboto", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "4px",
+          },
+          backgroundImage: {
+            'hero-pattern': "url('media/backgroundrocketimage.avif')",
+            'grid-pattern': "linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px)",
+          }
+        },
+      },
+    };
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #121212; }
+    ::-webkit-scrollbar-thumb { background: #333; }
+    ::-webkit-scrollbar-thumb:hover { background: #d25633; }
+    .technical-grid { background-size: 40px 40px; opacity: 0.1; }
+    #mobile-menu { transition: all 0.3s ease-in-out; }
+  </style>
+</head>
+
+<body class="font-body bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased selection:bg-primary selection:text-white">
+
+  <nav class="fixed w-full z-50 bg-background-dark/90 backdrop-blur-md border-b border-white/10 dark:border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-3">
+          <div class="flex-shrink-0">
+            <img src="logos/Mars_RT_Logo_Circular.png" alt="NKU Rocket Team Logo" class="h-10 w-auto">
+          </div>
+          <div class="hidden md:block">
+            <span class="text-white font-display font-bold text-xl tracking-wider uppercase">NKU Rocket Team</span>
+          </div>
+        </div>
+        
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a class="text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide" href="#">Home</a>
+            <a class="text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide" href="#projects">Projects</a>
+            <a class="text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide" href="#teams">Teams</a>
+            <a class="text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide" href="#contact">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a class="hidden sm:inline-block bg-primary hover:bg-red-600 text-white px-5 py-2 rounded font-display font-medium uppercase tracking-wider text-sm transition-all transform hover:-translate-y-0.5 shadow-lg shadow-red-900/20" href="#sponsor">
+            Sponsor Us
+          </a>
+          
+          <button id="menu-toggle" class="md:hidden text-white flex items-center focus:outline-none">
+            <span class="material-icons text-3xl" id="menu-icon">menu</span>
+          </button>
+        </div>
+      </div>
     </div>
-  </body>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-surface-dark border-b border-white/10 w-full absolute top-20 left-0 z-40">
+        <div class="px-4 pt-4 pb-8 space-y-2">
+            <a href="#" class="mobile-link block text-gray-300 hover:text-primary px-3 py-4 text-base font-display font-bold uppercase tracking-widest border-b border-white/5">Home</a>
+            <a href="#projects" class="mobile-link block text-gray-300 hover:text-primary px-3 py-4 text-base font-display font-bold uppercase tracking-widest border-b border-white/5">Projects</a>
+            <a href="#teams" class="mobile-link block text-gray-300 hover:text-primary px-3 py-4 text-base font-display font-bold uppercase tracking-widest border-b border-white/5">Teams</a>
+            <a href="#contact" class="mobile-link block text-gray-300 hover:text-primary px-3 py-4 text-base font-display font-bold uppercase tracking-widest border-b border-white/5">Contact Us</a>
+            <div class="pt-6">
+                <a href="#sponsor" class="mobile-link block w-full text-center bg-primary text-white py-4 rounded font-display font-bold uppercase tracking-widest">Sponsor Us</a>
+            </div>
+        </div>
+    </div>
+  </nav>
+
+  <header class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img alt="Rocket launch" class="w-full h-full object-cover" src="media/backgroundrocketimage.avif" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background-dark"></div>
+      <div class="absolute inset-0 technical-grid bg-grid-pattern z-10"></div>
+    </div>
+    <div class="relative z-20 text-center px-4 max-w-5xl mx-auto mt-16">
+      <div class="inline-block mb-4 px-3 py-1 border border-primary/50 rounded-full bg-black/30 backdrop-blur-sm">
+        <span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Est. 2024 • Northern Kentucky</span>
+      </div>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white uppercase tracking-tighter mb-6 leading-none drop-shadow-2xl">
+        Small Steps.<br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">Giant Leaps.</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto mb-10 tracking-wide border-l-4 border-primary pl-6 text-left md:text-center md:border-l-0 md:pl-0">
+        Bringing liquid rocketry to Northern Kentucky.
+      </p>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a class="group relative px-8 py-3 bg-transparent border border-white text-white font-display font-bold uppercase tracking-wider overflow-hidden hover:border-primary transition-colors" href="#projects">
+          <span class="absolute inset-0 w-full h-full bg-primary/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+          <span class="relative flex items-center gap-2">View Projects <span class="material-icons text-sm group-hover:translate-y-1 transition-transform">arrow_downward</span></span>
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+      <span class="material-icons text-white/50 text-4xl">keyboard_arrow_down</span>
+    </div>
+  </header>
+
+  <section class="py-24 bg-background-light dark:bg-background-dark relative" id="about">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="relative grid grid-cols-2 gap-4">
+          <div class="aspect-[3/4] rounded-lg overflow-hidden transform translate-y-8">
+            <img alt="Student engineering" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="media/whoweare1.jpg" />
+          </div>
+          <div class="aspect-[3/4] rounded-lg overflow-hidden">
+            <img alt="Engineering team" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="media/whoweare2.jpg" />
+          </div>
+          <div class="absolute -z-10 -top-10 -left-10 w-full h-full border-2 border-primary/20 rounded-lg"></div>
+        </div>
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="h-px w-12 bg-primary"></span>
+            <span class="text-primary font-display font-bold uppercase tracking-widest text-sm">Who We Are</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-8 leading-tight">
+            Empowering students to innovate in <span class="text-primary">rocket science.</span>
+          </h2>
+          <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300 font-light leading-relaxed">
+            <p>
+              NKU Rocket Team provides students hands-on engineering experience in design, manufacturing, testing, and launching.
+            </p>
+            <p>
+              We emphasize a first-principles mindset, designing all rockets and liquid engines from scratch. By uniting diverse talents from around the university, we are developing the future of the aerospace industry right here in Northern Kentucky.
+            </p>
+          </div>
+          <div class="mt-10 grid grid-cols-2 gap-8 border-t border-gray-200 dark:border-gray-800 pt-8">
+            <div>
+              <span class="block text-4xl font-display font-bold text-gray-900 dark:text-white">15+</span>
+              <span class="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400">Active Members</span>
+            </div>
+            <div>
+              <span class="block text-4xl font-display font-bold text-gray-900 dark:text-white">100%</span>
+              <span class="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400">Student Led</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-surface-dark relative overflow-hidden" id="projects">
+    <div class="absolute inset-0 opacity-5 pointer-events-none">
+      <svg height="100%" width="100%">
+        <pattern height="40" id="grid" patternUnits="userSpaceOnUse" width="40">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"></path>
+        </pattern>
+        <rect fill="url(#grid)" height="100%" width="100%"></rect>
+      </svg>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+        <div>
+          <h2 class="text-5xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter mb-2">Our <span class="text-primary">Projects</span></h2>
+          <p class="text-gray-400 max-w-xl">How <span class="text-primary">WE</span> reach for the stars.</p>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="group relative h-[500px] overflow-hidden rounded bg-black border border-white/10">
+          <img alt="Solid Rocketry" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50" src="media/starcatcher2.jpg" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="bg-primary text-white text-[10px] font-bold uppercase tracking-[0.2em] px-2 py-1 rounded-sm">Solid Rocketry</span>
+              <span class="text-gray-400 text-[10px] uppercase tracking-widest font-bold">Jan 2026 Launch</span>
+            </div>
+            <h3 class="text-4xl font-display font-bold text-white uppercase mb-4 tracking-tight">Star Catcher</h3>
+            <p class="text-gray-300 text-lg font-light leading-relaxed max-w-md transform transition-all duration-300">
+              NKU Rocket Team’s first solid rocketry project. Designed to reach over <span class="text-white font-bold">5,000 ft</span> of altitude, Star Catcher serves as our foundational flight platform.
+            </p>
+          </div>
+        </div>
+
+        <div class="group relative h-[500px] overflow-hidden rounded bg-black border border-white/10">
+          <img alt="Liquid Rocket Engine" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50" src="media/lre1.jpg" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="bg-primary text-white text-[10px] font-bold uppercase tracking-[0.2em] px-2 py-1 rounded-sm">Liquids</span>
+              <span class="text-gray-400 text-[10px] uppercase tracking-widest font-bold">Historical Milestone</span>
+            </div>
+            <h3 class="text-4xl font-display font-bold text-white uppercase mb-4 tracking-tight">Liquid Rocket Engine</h3>
+            <p class="text-gray-300 text-lg font-light leading-relaxed max-w-md transform transition-all duration-300">
+              The <span class="text-white font-bold">first student-built liquid rocket engine</span> in the history of the Cincinnati area. A major leap in propulsion technology for our region.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-20 bg-primary overflow-hidden" id="sponsor">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-black/10 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center md:text-left">
+      <div class="md:flex md:items-center md:justify-between">
+        <div>
+          <span class="text-white/80 font-bold uppercase tracking-widest text-sm mb-2 block">Partnership</span>
+          <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-4">Interested In Supporting Us?</h2>
+          <p class="text-white/90 text-lg max-w-2xl font-light">Learn more about how you can partner with us in our sponsorship information packet.</p>
+        </div>
+        <div class="mt-8 md:mt-0 flex flex-col sm:flex-row gap-4 justify-center md:justify-end">
+          <button class="px-8 py-3 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-primary transition-colors uppercase text-sm tracking-wider">
+            Learn More
+          </button>
+          <button class="px-8 py-3 bg-gray-900 text-white font-bold rounded-full hover:bg-gray-800 transition-colors uppercase text-sm tracking-wider shadow-xl">
+            Donate Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#0f0f0f] border-t border-white/5 text-gray-400 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+        <div class="flex items-center gap-3 mb-6 md:mb-0">
+          <div class="flex-shrink-0">
+            <img src="logos/Mars_RT_Logo_Circular.png" alt="NKU Rocket Team Logo" class="h-10 w-auto">
+          </div>
+          <span class="text-white font-display font-bold text-lg tracking-wider uppercase">NKU Rocket Team</span>
+        </div>
+        <div class="flex space-x-6">
+          <a class="text-gray-400 hover:text-white transition-colors" href="https://www.linkedin.com/company/nku-rt/posts/?feedView=all" target="_blank">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+          </a>
+          <a class="text-gray-400 hover:text-white transition-colors" href="mailto:contact@nku.edu"><span class="material-icons">email</span></a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm pt-8 border-t border-white/10">
+        <div class="space-y-4">
+          <p>NKU Rocket Team is a student organization at Northern Kentucky University.</p>
+          <p class="text-xs text-gray-600">Copyright © 2025 All rights reserved.</p>
+        </div>
+        <div class="flex flex-col md:items-end justify-center">
+          <span class="block text-gray-500 text-xs">Northern Kentucky University</span>
+          <span class="block text-gray-600 text-xs mt-1">Nunn Dr, Highland Heights, KY 41099</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function toggleMenu() {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            menuIcon.textContent = 'close';
+        } else {
+            mobileMenu.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileMenu.classList.add('hidden');
+            menuIcon.textContent = 'menu';
+        }
+    });
+  </script>
+
+</body>
 </html>
